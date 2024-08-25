@@ -38,6 +38,8 @@ kotlin {
             implementation(libs.androidx.activity.compose)
 
 //            implementation(libs.androidx.material)
+
+            implementation(libs.koin.android)
         }
         commonMain.dependencies {
             implementation(compose.runtime)
@@ -50,6 +52,12 @@ kotlin {
 
             implementation(compose.material3)
             implementation(libs.compose.navigation)
+
+            implementation(libs.koin.core)
+            implementation(libs.koin.compose)
+            
+
+            implementation(libs.kotlinx.serialization.json)
         }
         desktopMain.dependencies {
             implementation(compose.desktop.currentOs)

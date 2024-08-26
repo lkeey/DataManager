@@ -1,4 +1,4 @@
-package presentation.token_manager
+package dev.lkeeeey.manager.presentation.token_manager
 
 import androidx.compose.runtime.MutableState
 import androidx.compose.runtime.mutableStateOf
@@ -9,6 +9,8 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.onEach
+import presentation.token_manager.TokenEvent
+import presentation.token_manager.TokenState
 
 class TokenManager(
     private val checkTokenInteractor: CheckTokenInteractor,
@@ -37,13 +39,12 @@ class TokenManager(
     private fun checkToken() {
         checkTokenInteractor.execute().onEach { dataState ->
             when (dataState) {
-                is DataState.NetworkStatus<*> -> {}
-                is DataState.Response<*> -> {}
-                is DataState.Data<*> -> {
-                    state.value = state.value.copy(isTokenAvailable = dataState.status ?: false)
+                is DataState.NetworkStatus -> {}
+                is DataState.Response -> {}
+                is DataState.Data -> {
+                    state.value = state.value.copy(isTokenAvailable = dataState.data ?: false)
                 }
-
-                is DataState.Loading<*> -> {}
+                is DataState.Loading -> {}
             }
         }.launchIn(sessionScope)
     }
@@ -56,10 +57,8 @@ class TokenManager(
                 is DataState.Data<*> -> {
                     checkToken()
                 }
-
                 is DataState.Loading<*> -> {}
             }
         }.launchIn(sessionScope)
     }
-
 }

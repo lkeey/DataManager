@@ -1,7 +1,7 @@
 package dev.lkeeeey.manager.presentation
 
 import androidx.lifecycle.ViewModel
-import presentation.token_manager.TokenManager
+import dev.lkeeeey.manager.presentation.token_manager.TokenManager
 
 
 class SharedViewModel(

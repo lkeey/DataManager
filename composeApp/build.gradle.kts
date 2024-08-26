@@ -40,6 +40,8 @@ kotlin {
 //            implementation(libs.androidx.material)
 
             implementation(libs.koin.android)
+
+            implementation(libs.ktor.okhttp)
         }
         commonMain.dependencies {
             implementation(compose.runtime)
@@ -55,9 +57,21 @@ kotlin {
 
             implementation(libs.koin.core)
             implementation(libs.koin.compose)
-            
+
+            implementation(libs.androidx.datastore.preferences)
+            implementation(libs.androidx.datastore.preferences.core)
 
             implementation(libs.kotlinx.serialization.json)
+
+            implementation(libs.ktor.core)
+            implementation(libs.ktor.logging)
+            implementation(libs.ktor.serialization)
+            implementation(libs.ktor.negotiation)
+            implementation(libs.ktor.mock)
+        }
+        iosMain.dependencies {
+            implementation(libs.ktor.darwin.ios)
+            implementation(libs.ktor.ios)
         }
         desktopMain.dependencies {
             implementation(compose.desktop.currentOs)

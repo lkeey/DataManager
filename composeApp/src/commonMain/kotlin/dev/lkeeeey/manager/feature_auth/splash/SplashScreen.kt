@@ -23,24 +23,25 @@ import dev.lkeeeey.manager.presentation.theme.splashBackground
 import kotlinx.coroutines.delay
 import org.jetbrains.compose.resources.ExperimentalResourceApi
 import org.jetbrains.compose.resources.stringResource
+import presentation.ui.splash.view_model.LoginEvent
+import presentation.ui.splash.view_model.LoginState
 
-@OptIn(ExperimentalResourceApi::class)
 @Composable
 internal fun SplashScreen(
-//    state: LoginState,
-//    events: (LoginEvent) -> Unit,
+    state: LoginState,
+    events: (LoginEvent) -> Unit,
     navigateToMain: () -> Unit,
     navigateToLogin: () -> Unit,
 ) {
 
-//    LaunchedEffect(state.navigateToMain) {
-//        delay(3000L)
-//        if (state.navigateToMain) {
-//            navigateToMain()
-//        } else {
-//            navigateToLogin()
-//        }
-//    }
+    LaunchedEffect(state.navigateToMain) {
+        delay(3000L)
+        if (state.navigateToMain) {
+            navigateToMain()
+        } else {
+            navigateToLogin()
+        }
+    }
 
     Box(
         modifier = Modifier.fillMaxSize().background(splashBackground),

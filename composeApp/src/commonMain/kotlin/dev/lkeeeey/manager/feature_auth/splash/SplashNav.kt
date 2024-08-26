@@ -37,7 +37,8 @@ internal fun SplashNav(
         }
         composable(route = SplashNavigation.Login.route) {
             LoginScreen(
-                navigateToMain = navigateToMain, navigateToRegister = {
+                navigateToMain = navigateToMain,
+                navigateToRegister = {
                     navigator.navigate(SplashNavigation.Register.route)
                 },
                 state = viewModel.state.value,

@@ -29,18 +29,30 @@ import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.style.TextDecoration
 import androidx.compose.ui.unit.dp
 import datamanager.composeapp.generated.resources.Res
+import datamanager.composeapp.generated.resources.app_name
 import datamanager.composeapp.generated.resources.compose_multiplatform
-import dev.lkeeeey.manager.presentation.component.DEFAULT__BUTTON_SIZE_EXTRA
-import dev.lkeeeey.manager.presentation.component.DefaultButton
-import dev.lkeeeey.manager.presentation.component.DefaultScreenUI
-import dev.lkeeeey.manager.presentation.component.PasswordTextField
-import dev.lkeeeey.manager.presentation.component.SimpleImageButton
-import dev.lkeeeey.manager.presentation.component.Spacer_16dp
-import dev.lkeeeey.manager.presentation.component.Spacer_32dp
-import dev.lkeeeey.manager.presentation.component.Spacer_4dp
-import dev.lkeeeey.manager.presentation.component.Spacer_8dp
+import datamanager.composeapp.generated.resources.dont_have_an_account
+import datamanager.composeapp.generated.resources.email
+import datamanager.composeapp.generated.resources.enter_valid_email
+import datamanager.composeapp.generated.resources.enter_valid_password
+import datamanager.composeapp.generated.resources.forget_password
+import datamanager.composeapp.generated.resources.or_sign_in_with
+import datamanager.composeapp.generated.resources.password
+import datamanager.composeapp.generated.resources.sign_in
+import datamanager.composeapp.generated.resources.sign_up
+import datamanager.composeapp.generated.resources.welcome_title
+import dev.lkeeeey.manager.presentation.components.DEFAULT__BUTTON_SIZE_EXTRA
+import dev.lkeeeey.manager.presentation.components.DefaultButton
+import dev.lkeeeey.manager.presentation.components.DefaultScreenUI
+import dev.lkeeeey.manager.presentation.components.PasswordTextField
+import dev.lkeeeey.manager.presentation.components.SimpleImageButton
+import dev.lkeeeey.manager.presentation.components.Spacer_16dp
+import dev.lkeeeey.manager.presentation.components.Spacer_32dp
+import dev.lkeeeey.manager.presentation.components.Spacer_4dp
+import dev.lkeeeey.manager.presentation.components.Spacer_8dp
 import dev.lkeeeey.manager.presentation.theme.DefaultTextFieldTheme
 import org.jetbrains.compose.resources.ExperimentalResourceApi
+import org.jetbrains.compose.resources.stringResource
 import presentation.ui.splash.view_model.LoginEvent
 import presentation.ui.splash.view_model.LoginState
 
@@ -72,10 +84,10 @@ fun LoginScreen(
             horizontalAlignment = Alignment.CenterHorizontally,
             verticalArrangement = Arrangement.Center
         ) {
-            Text("stringResource(Res.string.sign_in", style = MaterialTheme.typography.displaySmall)
+            Text(stringResource(Res.string.app_name), style = MaterialTheme.typography.displaySmall)
             Spacer_16dp()
             Text(
-                "stringResource(Res.string.welcome_title)",
+                stringResource(Res.string.welcome_title),
                 style = MaterialTheme.typography.labelMedium
             )
             Spacer_32dp()
@@ -83,7 +95,7 @@ fun LoginScreen(
             Column(
                 horizontalAlignment = Alignment.Start
             ) {
-                Text("stringResource(Res.string.email)")
+                Text(stringResource(Res.string.email))
                 Spacer_4dp()
                 TextField(
                     isError = isUsernameError,
@@ -105,14 +117,14 @@ fun LoginScreen(
                 )
                 AnimatedVisibility(visible = isUsernameError) {
                     Text(
-                        "stringResource(Res.string.enter_valid_email)",
+                        stringResource(Res.string.enter_valid_email),
                         style = MaterialTheme.typography.bodySmall,
                         color = MaterialTheme.colorScheme.error
                     )
                 }
                 Spacer_8dp()
 
-                Text("tringResource(Res.string.password)")
+                Text(stringResource(Res.string.password))
                 Spacer_4dp()
                 PasswordTextField(
                    // isError = isPasswordError,
@@ -126,7 +138,7 @@ fun LoginScreen(
 
                 AnimatedVisibility(visible = isPasswordError) {
                     Text(
-                        "stringResource(Res.string.enter_valid_password)",
+                        stringResource(Res.string.enter_valid_password),
                         style = MaterialTheme.typography.bodySmall,
                         color = MaterialTheme.colorScheme.error
                     )
@@ -141,7 +153,7 @@ fun LoginScreen(
                 horizontalArrangement = Arrangement.End
             ) {
                 Text(
-                    "stringResource(Res.string.forget_password)",
+                    stringResource(Res.string.forget_password),
                     style = MaterialTheme.typography.labelMedium,
                     color = MaterialTheme.colorScheme.primary,
                     textDecoration = TextDecoration.Underline
@@ -156,7 +168,7 @@ fun LoginScreen(
             ) {
                 DefaultButton(
                     progressBarState = state.progressBarState,
-                    text = "stringResource(Res.string.sign_in)",
+                    text = stringResource(Res.string.sign_in),
                     modifier = Modifier
                         .fillMaxWidth()
                         .height(DEFAULT__BUTTON_SIZE_EXTRA),
@@ -178,7 +190,7 @@ fun LoginScreen(
                     horizontalArrangement = Arrangement.SpaceBetween
                 ) {
                     HorizontalDivider(modifier = Modifier.width(75.dp))
-                    Text(text = "stringResource(Res.string.or_sign_in_with)")
+                    Text(text = stringResource(Res.string.or_sign_in_with))
                     HorizontalDivider(modifier = Modifier.width(75.dp))
                 }
                 Spacer_32dp()
@@ -201,14 +213,14 @@ fun LoginScreen(
 
             Row(verticalAlignment = Alignment.CenterVertically) {
                 Text(
-                    text = "stringResource(Res.string.dont_have_an_account)",
+                    text = stringResource(Res.string.dont_have_an_account),
                 )
                 Spacer_4dp()
                 Text(
                     modifier = Modifier.clickable {
                         navigateToRegister()
                     },
-                    text = "stringResource(Res.string.sign_up)",
+                    text = stringResource(Res.string.sign_up),
                     color = MaterialTheme.colorScheme.primary,
                     textDecoration = TextDecoration.Underline
                 )

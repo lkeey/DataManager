@@ -23,7 +23,6 @@ class LoginViewModel(
 
     val state: MutableState<LoginState> = mutableStateOf(LoginState())
 
-
     fun onTriggerEvent(event: LoginEvent) {
         when (event) {
 
@@ -179,6 +178,7 @@ class LoginViewModel(
 
 
     private fun onRetryNetwork() {
+
     }
 
 

@@ -1,4 +1,4 @@
-package dev.lkeeeey.manager.presentation.component
+package dev.lkeeeey.manager.presentation.components
 
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.Image

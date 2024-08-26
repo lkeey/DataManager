@@ -3,9 +3,7 @@ package dev.lkeeeey.manager.presentation.navigation
 import datamanager.composeapp.generated.resources.Res
 import datamanager.composeapp.generated.resources.compose_multiplatform
 import org.jetbrains.compose.resources.DrawableResource
-import org.jetbrains.compose.resources.ExperimentalResourceApi
 
-@OptIn(ExperimentalResourceApi::class)
 sealed class MainNavigation (
     val route: String,
     val title: String,
@@ -36,7 +34,6 @@ sealed class MainNavigation (
         selectedIcon = Res.drawable.compose_multiplatform,
         unSelectedIcon = Res.drawable.compose_multiplatform
     )
-
 
 }
 

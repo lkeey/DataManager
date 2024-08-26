@@ -1,4 +1,4 @@
-package dev.lkeeeey.manager.presentation.component
+package dev.lkeeeey.manager.presentation.components
 
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.text.KeyboardOptions

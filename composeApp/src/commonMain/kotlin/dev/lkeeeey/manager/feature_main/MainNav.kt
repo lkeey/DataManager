@@ -24,7 +24,6 @@ import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import dev.lkeeeey.manager.presentation.navigation.MainNavigation
 import dev.lkeeeey.manager.presentation.theme.DefaultNavigationBarItemTheme
-import org.jetbrains.compose.resources.ExperimentalResourceApi
 import org.jetbrains.compose.resources.painterResource
 
 @Composable
@@ -61,7 +60,6 @@ fun MainNav(logout: () -> Unit) {
 }
 
 
-@OptIn(ExperimentalResourceApi::class)
 @Composable
 fun BottomNavigationUI(
     navController: NavController,

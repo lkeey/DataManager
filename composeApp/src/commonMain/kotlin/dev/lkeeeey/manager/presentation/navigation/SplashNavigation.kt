@@ -12,6 +12,5 @@ sealed class SplashNavigation(
 
     data object Register : SplashNavigation(route = "Register", arguments = emptyList())
 
-
 }
 
